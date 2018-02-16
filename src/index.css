@@ -18,7 +18,7 @@ body {
   flex-flow: column wrap;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  height: 90px;
 }
 
 a {
@@ -45,4 +45,34 @@ a {
   padding-left: 30px;
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+form {
+  width: 240px;
+  padding: 0 15px;
+  border: 1px solid #dcdcdc;
+  height: 35px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+}
+
+form input {
+  background: url(http://support.amd.com/Style%20Library/Images/AMD/search_icon.png)
+    no-repeat center right;
+  border: 0;
+  width: 240px;
+  padding: 0;
+  height: 35px;
+  line-height: 28px;
+  color: white;
+  font-size: 16px;
+}
+
+form input:focus {
+  outline: 0;
 }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { random } from "./Store";
+import { random, openPage } from "./Store";
 import { builder } from "./Search";
 
 class App extends Component {
@@ -20,15 +20,12 @@ class App extends Component {
     const build = await builder(this.state.text);
     const pages = build.query.pages;
     Object.keys(pages).map(e => {
-      storeKeys.push(pages[e]);
+      return storeKeys.push(pages[e]);
     });
     let dark = storeKeys.map((e, i) => {
       return (
         <div className="item">
-          <a
-            href={`https://en.wikipedia.org/?curid=${e.pageid}`}
-            target="_blank"
-          >
+          <a href={`${openPage}${e.pageid}`} target="_blank">
             <p className="bold" key={i}>
               {e.title}
             </p>
@@ -37,10 +34,17 @@ class App extends Component {
         </div>
       );
     });
+
     this.setState({
-      content: dark,
+      content: "",
       text: ""
     });
+
+    setTimeout(() => {
+      this.setState({
+        content: dark
+      });
+    }, 1000);
   }
 
   handleChange(e) {
