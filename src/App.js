@@ -65,7 +65,9 @@ class App extends Component {
       <div className="container">
         <div className="navBar">
           <div>
-            <button onClick={this.randomClick}>Random Page</button>
+            <button className="random" onClick={this.randomClick}>
+              Random Page
+            </button>
           </div>
           <div>
             <form onSubmit={this.handleSubmit}>
